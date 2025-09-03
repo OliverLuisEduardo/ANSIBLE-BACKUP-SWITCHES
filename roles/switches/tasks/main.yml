@@ -1,0 +1,30 @@
+---
+- name: "Backup Dell OS10"
+  when: ansible_network_os == 'dellemc.os10.os10'
+  dellemc.os10.os10_command:
+    commands: show running-configuration
+  register: config
+
+- name: "Backup Dell OS6"
+  when: ansible_network_os == 'dellemc.os6.os6'
+  dellemc.os6.os6_command:
+    commands: show running-config
+  register: config
+
+- name: "Backup Aruba AOS-CX"
+  when: ansible_network_os == 'arubanetworks.aoscx.aoscx'
+  arubanetworks.aoscx.aoscx_command:
+    commands: show running-config
+  register: config
+
+- name: "Backup HPE ProCurve / ArubaOS-S"
+  when: ansible_network_os == 'hpe.procurve.procurve'
+  hpe.procurve.procurve_command:
+    commands: show running-config
+  register: config
+
+- name: "Save configuration to file"
+  copy:
+    content: "{{ config.stdout[0] }}"
+    dest: "backup/switches/{{ inventory_hostname }}.cfg"
+  when: config.stdout is defined

@@ -1,0 +1,9 @@
+---
+- name: Backup FortiGate configuration
+  fortinet.fortios.fortios_config:
+    host: "{{ ansible_host }}"
+    username: "{{ ansible_user }}"
+    password: "{{ ansible_password }}"
+    backup: yes
+    backup_path: "backup/firewalls/"
+    backup_filename: "{{ inventory_hostname }}.cfg"
