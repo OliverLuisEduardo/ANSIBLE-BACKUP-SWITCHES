@@ -18,6 +18,10 @@ aruba-switch1 ansible_host=192.168.20.1 ansible_network_os=arubanetworks.aoscx.a
 # Para switches HPE ProCurve / ArubaOS-Switch
 procurve-switch1 ansible_host=192.168.30.1 ansible_network_os=hpe.procurve.procurve
 
+[3com]
+# Para switches 3Com / HPE Comware
+3com-switch1 ansible_host=192.168.40.1 ansible_network_os=hpe.comware.comware
+
 [fortigates]
 fortigate1 ansible_host=192.168.1.254 ansible_network_os=fortinet.fortios.fortios
 
@@ -29,6 +33,7 @@ dell_os6
 dell_os9
 aruba_aoscx
 hpe_procurve
+3com
 
 [firewalls:children]
 fortigates

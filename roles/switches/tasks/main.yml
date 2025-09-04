@@ -29,6 +29,12 @@
     commands: show running-config
   register: config
 
+- name: "Backup 3Com / HPE Comware"
+  when: ansible_network_os == 'hpe.comware.comware'
+  hpe.comware.comware_command:
+    commands: display current-configuration
+  register: config
+
 - name: "Save configuration to file"
   copy:
     content: "{{ config.stdout[0] }}"

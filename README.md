@@ -4,7 +4,7 @@ Este projeto Ansible foi configurado para automatizar o backup das configuraçõ
 
 *   Firewalls FortiGate
 *   Switches Dell (OS6, OS9 e OS10)
-*   Switches HPE/Aruba (AOS-CX e ProCurve/AOS-S)
+*   Switches HPE/Aruba (AOS-CX, ProCurve/AOS-S e Comware/3Com)
 
 ## Pré-requisitos
 
@@ -37,7 +37,7 @@ Para outras distribuições, consulte a [documentação oficial do Ansible](http
 Este projeto depende de coleções Ansible específicas para cada fabricante. Para instalá-las, execute o seguinte comando:
 
 ```bash
-ansible-galaxy collection install dellemc.os10 dellemc.os6 dellemc.os9 arubanetworks.aoscx hpe.procurve fortinet.fortios
+ansible-galaxy collection install dellemc.os10 dellemc.os6 dellemc.os9 arubanetworks.aoscx hpe.procurve hpe.comware fortinet.fortios
 ```
 
 ## 3. Configuração do Inventário
@@ -48,7 +48,7 @@ Antes de executar o playbook, você precisa configurar o arquivo `inventory` com
 2.  Edite os hosts de exemplo ou adicione novos hosts dentro dos grupos apropriados (ex: `[dell_os10]`, `[fortigates]`)
 3.  Certifique-se de que a variável `ansible_host` contém o IP correto do equipamento.
 
-**Importante:** Este playbook assume que você está usando autenticação por usuário e senha. Você precisará fornecer as credenciais ao executar o playbook. Para um ambiente de produção, é altamente recomendável o uso de [Ansible Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) para proteger suas credenciais.
+**Importante:** Este playbook assume que você está usando autenticação por usuário e senha. Você precisará fornecer as credenciais ao executar o playbook. Para um ambiente de produção, é highly recomendável o uso de [Ansible Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) para proteger suas credenciais.
 
 ## 4. Execução do Playbook
 
