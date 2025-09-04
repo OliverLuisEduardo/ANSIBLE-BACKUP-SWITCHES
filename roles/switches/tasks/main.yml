@@ -11,6 +11,12 @@
     commands: show running-config
   register: config
 
+- name: "Backup Dell OS9"
+  when: ansible_network_os == 'dellemc.os9.os9'
+  dellemc.os9.os9_command:
+    commands: show running-configuration
+  register: config
+
 - name: "Backup Aruba AOS-CX"
   when: ansible_network_os == 'arubanetworks.aoscx.aoscx'
   arubanetworks.aoscx.aoscx_command:

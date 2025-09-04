@@ -3,7 +3,7 @@
 Este projeto Ansible foi configurado para automatizar o backup das configurações de diversos equipamentos de rede, incluindo:
 
 *   Firewalls FortiGate
-*   Switches Dell (OS6 e OS10)
+*   Switches Dell (OS6, OS9 e OS10)
 *   Switches HPE/Aruba (AOS-CX e ProCurve/AOS-S)
 
 ## Pré-requisitos
@@ -37,7 +37,7 @@ Para outras distribuições, consulte a [documentação oficial do Ansible](http
 Este projeto depende de coleções Ansible específicas para cada fabricante. Para instalá-las, execute o seguinte comando:
 
 ```bash
-ansible-galaxy collection install dellemc.os10 dellemc.os6 arubanetworks.aoscx hpe.procurve fortinet.fortios
+ansible-galaxy collection install dellemc.os10 dellemc.os6 dellemc.os9 arubanetworks.aoscx hpe.procurve fortinet.fortios
 ```
 
 ## 3. Configuração do Inventário

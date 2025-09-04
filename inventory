@@ -7,6 +7,9 @@ dellos10-switch1 ansible_host=192.168.10.1 ansible_network_os=dellemc.os10.os10
 [dell_os6]
 dellos6-switch1 ansible_host=192.168.6.1 ansible_network_os=dellemc.os6.os6
 
+[dell_os9]
+dellos9-switch1 ansible_host=192.168.9.1 ansible_network_os=dellemc.os9.os9
+
 [aruba_aoscx]
 # Para switches Aruba com OS-CX
 aruba-switch1 ansible_host=192.168.20.1 ansible_network_os=arubanetworks.aoscx.aoscx
@@ -23,6 +26,7 @@ fortigate1 ansible_host=192.168.1.254 ansible_network_os=fortinet.fortios.fortio
 [switches:children]
 dell_os10
 dell_os6
+dell_os9
 aruba_aoscx
 hpe_procurve
 
